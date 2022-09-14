@@ -171,6 +171,7 @@ void LinkButton::_notification(int p_what) {
 			bool do_underline = false;
 
 			switch (get_draw_mode()) {
+				case DRAW_FOCUS_NORMAL:
 				case DRAW_NORMAL: {
 					if (has_focus()) {
 						color = theme_cache.font_focus_color;
@@ -180,7 +181,9 @@ void LinkButton::_notification(int p_what) {
 
 					do_underline = underline_mode == UNDERLINE_MODE_ALWAYS;
 				} break;
+				case DRAW_FOCUS_HOVER_PRESSED:
 				case DRAW_HOVER_PRESSED:
+				case DRAW_FOCUS_PRESSED:
 				case DRAW_PRESSED: {
 					if (has_theme_color(SNAME("font_pressed_color"))) {
 						color = theme_cache.font_pressed_color;
@@ -191,11 +194,13 @@ void LinkButton::_notification(int p_what) {
 					do_underline = underline_mode != UNDERLINE_MODE_NEVER;
 
 				} break;
+				case DRAW_FOCUS_HOVER:
 				case DRAW_HOVER: {
 					color = theme_cache.font_hover_color;
 					do_underline = underline_mode != UNDERLINE_MODE_NEVER;
 
 				} break;
+				case DRAW_FOCUS_DISABLED:
 				case DRAW_DISABLED: {
 					color = theme_cache.font_disabled_color;
 					do_underline = underline_mode == UNDERLINE_MODE_ALWAYS;

@@ -106,16 +106,16 @@
 		<constant name="DRAW_NORMAL" value="0" enum="DrawMode">
 			The normal state (i.e. not pressed, not hovered, not toggled and enabled) of buttons.
 		</constant>
-		<constant name="DRAW_PRESSED" value="1" enum="DrawMode">
+		<constant name="DRAW_PRESSED" value="2" enum="DrawMode">
 			The state of buttons are pressed.
 		</constant>
-		<constant name="DRAW_HOVER" value="2" enum="DrawMode">
+		<constant name="DRAW_HOVER" value="4" enum="DrawMode">
 			The state of buttons are hovered.
 		</constant>
-		<constant name="DRAW_DISABLED" value="3" enum="DrawMode">
+		<constant name="DRAW_DISABLED" value="6" enum="DrawMode">
 			The state of buttons are disabled.
 		</constant>
-		<constant name="DRAW_HOVER_PRESSED" value="4" enum="DrawMode">
+		<constant name="DRAW_HOVER_PRESSED" value="8" enum="DrawMode">
 			The state of buttons are both hovered and pressed.
 		</constant>
 		<constant name="ACTION_MODE_BUTTON_PRESS" value="0" enum="ActionMode">

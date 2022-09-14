@@ -57,14 +57,24 @@ private:
 	struct ThemeCache {
 		Ref<StyleBox> normal;
 		Ref<StyleBox> normal_mirrored;
+		Ref<StyleBox> focus_normal;
+		Ref<StyleBox> focus_normal_mirrored;
 		Ref<StyleBox> pressed;
 		Ref<StyleBox> pressed_mirrored;
+		Ref<StyleBox> focus_pressed;
+		Ref<StyleBox> focus_pressed_mirrored;
 		Ref<StyleBox> hover;
 		Ref<StyleBox> hover_mirrored;
+		Ref<StyleBox> focus_hover;
+		Ref<StyleBox> focus_hover_mirrored;
 		Ref<StyleBox> hover_pressed;
 		Ref<StyleBox> hover_pressed_mirrored;
+		Ref<StyleBox> focus_hover_pressed;
+		Ref<StyleBox> focus_hover_pressed_mirrored;
 		Ref<StyleBox> disabled;
 		Ref<StyleBox> disabled_mirrored;
+		Ref<StyleBox> focus_disabled;
+		Ref<StyleBox> focus_disabled_mirrored;
 		Ref<StyleBox> focus;
 
 		Color font_color;

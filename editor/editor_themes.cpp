@@ -750,6 +750,12 @@ Ref<Theme> create_editor_theme(const Ref<Theme> p_theme) {
 	theme->set_stylebox("focus", "Button", style_widget_focus);
 	theme->set_stylebox("disabled", "Button", style_widget_disabled);
 
+	// Done to prevent overwriting of the editor theme with project theme when the styleboxes aren't set.
+	theme->set_stylebox("focus_normal", "Button", style_empty);
+	theme->set_stylebox("focus_hover", "Button", style_empty);
+	theme->set_stylebox("focus_pressed", "Button", style_empty);
+	theme->set_stylebox("focus_disabled", "Button", style_empty);
+
 	theme->set_color("font_color", "Button", font_color);
 	theme->set_color("font_hover_color", "Button", font_hover_color);
 	theme->set_color("font_hover_pressed_color", "Button", font_hover_pressed_color);

@@ -126,12 +126,15 @@ void TextureButton::_notification(int p_what) {
 			Ref<Texture2D> texdraw;
 
 			switch (draw_mode) {
+				case DRAW_FOCUS_NORMAL:
 				case DRAW_NORMAL: {
 					if (normal.is_valid()) {
 						texdraw = normal;
 					}
 				} break;
+				case DRAW_FOCUS_HOVER_PRESSED:
 				case DRAW_HOVER_PRESSED:
+				case DRAW_FOCUS_PRESSED:
 				case DRAW_PRESSED: {
 					if (pressed.is_null()) {
 						if (hover.is_null()) {
@@ -146,6 +149,7 @@ void TextureButton::_notification(int p_what) {
 						texdraw = pressed;
 					}
 				} break;
+				case DRAW_FOCUS_HOVER:
 				case DRAW_HOVER: {
 					if (hover.is_null()) {
 						if (pressed.is_valid() && is_pressed()) {
@@ -157,6 +161,7 @@ void TextureButton::_notification(int p_what) {
 						texdraw = hover;
 					}
 				} break;
+				case DRAW_FOCUS_DISABLED:
 				case DRAW_DISABLED: {
 					if (disabled.is_null()) {
 						if (normal.is_valid()) {

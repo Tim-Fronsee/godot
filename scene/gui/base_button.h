@@ -90,10 +90,15 @@ protected:
 public:
 	enum DrawMode {
 		DRAW_NORMAL,
+		DRAW_FOCUS_NORMAL,
 		DRAW_PRESSED,
+		DRAW_FOCUS_PRESSED,
 		DRAW_HOVER,
+		DRAW_FOCUS_HOVER,
 		DRAW_DISABLED,
+		DRAW_FOCUS_DISABLED,
 		DRAW_HOVER_PRESSED,
+		DRAW_FOCUS_HOVER_PRESSED
 	};
 
 	DrawMode get_draw_mode() const;

@@ -263,15 +263,26 @@ bool BaseButton::is_hovered() const {
 
 BaseButton::DrawMode BaseButton::get_draw_mode() const {
 	if (status.disabled) {
-		return DRAW_DISABLED;
+		if (has_focus()) {
+			return DRAW_FOCUS_DISABLED;
+		} else {
+			return DRAW_DISABLED;
+		}
 	};
 
 	if (!status.press_attempt && status.hovering) {
 		if (status.pressed) {
-			return DRAW_HOVER_PRESSED;
+			if (has_focus()) {
+				return DRAW_FOCUS_HOVER_PRESSED;
+			} else {
+				return DRAW_HOVER_PRESSED;
+			}
 		}
-
-		return DRAW_HOVER;
+		if (has_focus()) {
+			return DRAW_FOCUS_HOVER;
+		} else {
+			return DRAW_HOVER;
+		}
 	} else {
 		/* determine if pressed or not */
 
@@ -286,10 +297,16 @@ BaseButton::DrawMode BaseButton::get_draw_mode() const {
 		}
 
 		if (pressing) {
-			return DRAW_PRESSED;
-		} else {
-			return DRAW_NORMAL;
+			if (has_focus()) {
+				return DRAW_FOCUS_PRESSED;
+			} else {
+				return DRAW_PRESSED;
+			}
 		}
+	}
+
+	if (has_focus()) {
+		return DRAW_FOCUS_NORMAL;
 	}
 
 	return DRAW_NORMAL;
